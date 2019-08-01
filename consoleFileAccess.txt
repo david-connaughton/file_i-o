@@ -1,0 +1,65 @@
+This code is used in Python REPL
+
+
+
+vocstartsoft:~/environment (master) $ python3
+Python 3.6.8 (default, Jan 14 2019, 11:02:34) 
+[GCC 8.0.1 20180414 (experimental) [trunk revision 259383]] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x = 20
+>>> y = 5
+>>> print(x-y)
+15
+>>> f = open('data.txt', 'r')
+>>> f.write('Hello World')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+io.UnsupportedOperation: not writable
+>>> quit()
+vocstartsoft:~/environment (master) $ clear
+vocstartsoft:~/environment (master) $ python3
+Python 3.6.8 (default, Jan 14 2019, 11:02:34) 
+[GCC 8.0.1 20180414 (experimental) [trunk revision 259383]] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> f = open("data.txt", "w")
+>>> f.write("Hello World")
+11
+>>> f.flush()
+>>> f.close()
+>>> f = open("data.txt", "a")
+>>> f.write('Appended line 1\n')
+16
+>>> f.write('Appended line 2\n')
+16
+>>> f.write('Appended line 3\n')
+16
+>>> f.close()
+>>> f = open('data.txt', 'r')
+>>> lines = f.read()
+>>> print(lines)
+Hello WorldAppended line 1
+Appended line 2
+Appended line 3
+
+>>> f.close()
+>>> f = open('data.txt', 'r')
+>>> f.tell()
+0
+>>> text = f.read()
+>>> f.tell()
+59
+>>> f.seek(0)
+0
+>>> f.tell()
+0
+>>> f.close()
+>>> f = open('data.txt', 'w')
+>>> f.tell()
+0
+>>> f.write("Hello")
+5
+>>> f.write("World")
+5
+>>> f.tell()
+10
+>>> f.close()
