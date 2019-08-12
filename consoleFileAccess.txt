@@ -63,3 +63,28 @@ Appended line 3
 >>> f.tell()
 10
 >>> f.close()
+
+
+
+>>> f = open('data.txt','r+')
+>>> lines=f.read()
+>>> print(lines)
+Line 1
+Line 2
+Line 3
+
+>>> f.write("Line 4\n")
+7
+>>> f.close()
+>>> f = open('data.txt', 'r+')
+>>> f.write('Foo')
+3
+>>> f.close()
+>>> f = open('data.txt', 'a+')
+>>> f.tell()
+22
+>>> f.seek(0)
+0
+>>> f.write('Foo')
+3
+>>> f.close()
